@@ -1,0 +1,34 @@
+@import 'globals';
+@import 'mixins/flexmixins';
+@import 'partials/header';
+
+body{
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+#mainViewContainer{
+  //flexbox(direction of flex, layout/display)
+  //@include flexBox(column, nowrap);
+  @include flexItem(1,1,auto);
+  height: 100%;
+  width: 100%;
+}
+
+.logo{
+margin-left: 1%;
+}
+
+textarea{
+  resize: none;
+  width:95%;
+  height:60%;
+  margin-left:2%;
+}
+
+.gistArea{
+  height: 100%;
+  width:100%;
+
+}

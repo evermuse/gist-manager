@@ -1,0 +1,38 @@
+/* line 4, /Users/EnemyBoss/DevLeague/gist-manager/src/sass/partials/_header.scss */
+header {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  height: 100px; }
+
+/* line 5, stdin */
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+/* line 11, stdin */
+#mainViewContainer {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%; }
+
+/* line 19, stdin */
+.logo {
+  margin-left: 1%; }
+
+/* line 23, stdin */
+textarea {
+  resize: none;
+  width: 95%;
+  height: 60%;
+  margin-left: 2%; }
+
+/* line 30, stdin */
+.gistArea {
+  height: 100%;
+  width: 100%; }
