@@ -6,33 +6,77 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  height: 100px; }
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box; }
+  /* line 12, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
+  header .logo {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    width: 40%; }
+  /* line 19, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
+  header nav {
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2%;
+    width: 56%; }
+  /* line 30, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
+  header button {
+    flex: 0 1 100px;
+    box-sizing: border-box;
+    height: 75px;
+    padding: 5px;
+    margin: 5px;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer; }
+    /* line 40, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
+    header button:active {
+      position: relative;
+      top: 1px; }
+  /* line 49, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
+  header #loginButton {
+    margin-right: 0px; }
 
 /* line 5, stdin */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* line 12, stdin */
 body {
   height: 100%;
   width: 100%;
   position: absolute; }
 
-/* line 11, stdin */
+/* line 20, stdin */
 #mainViewContainer {
   flex: 1 1 auto;
   box-sizing: border-box;
   height: 100%;
   width: 100%; }
 
-/* line 19, stdin */
-.logo {
-  margin-left: 1%; }
-
-/* line 23, stdin */
-textarea {
-  resize: none;
-  width: 95%;
-  height: 60%;
-  margin-left: 2%; }
-
-/* line 30, stdin */
-.gistArea {
+/* line 28, stdin */
+#mainContent {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box; }
+  /* line 35, stdin */
+  #mainContent input {
+    margin: 2% 0;
+    padding-left: 15px;
+    height: 25px; }
+  /* line 42, stdin */
+  #mainContent textarea {
+    resize: none;
+    width: 100%;
+    height: 75%;
+    padding: 2%;
+    box-sizing: border-box; }

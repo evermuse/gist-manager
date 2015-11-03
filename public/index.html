@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Gist Do It</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body ng-app='gistApp'>
+
   <div id="mainViewContainer">
+
     <header>
-      <img src="images/GistLogo.png" class="logo">
+
+        <img src="images/GistLogo.png" class="logo">
+
+        <nav>
+
+            <button name="editor">Editor</button>
+            <button name="editor">Library</button>
+            <button id="loginButton">Log In</button>
+
+        </nav>
+
     </header>
 
-    <section class="gistArea">
-      <textarea name="newGist" id="newGist"></textarea>
+    <section id="mainContent" ng-view>
+
+        <input type="text" placeholder="Name Your Gist!" />
+
+        <textarea name="newGist" id="newGist"></textarea>
+
     </section>
-
-
-
-
 
 
   </div>

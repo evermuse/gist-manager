@@ -16,8 +16,6 @@ var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended : true }));
 
-
-
 //TODO: OAuth
 //step 1 getting the provider auth url
 //step 2 callback from provider with code on successful authorization
@@ -34,7 +32,6 @@ router.get('/login', function(req, res) {
   });
   res.json({ url : authURL });  //gives user authorization to login
 });
-
 
 
 //step 2

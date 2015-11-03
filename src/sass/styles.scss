@@ -2,33 +2,54 @@
 @import 'mixins/flexmixins';
 @import 'partials/header';
 
+* {
+
+  margin: 0;
+  padding: 0;
+
+}
+
 body{
+
   height:100%;
   width:100%;
   position:absolute;
+
 }
 
 #mainViewContainer{
+
   //flexbox(direction of flex, layout/display)
-  //@include flexBox(column, nowrap);
   @include flexItem(1,1,auto);
   height: 100%;
   width: 100%;
 }
 
-.logo{
-margin-left: 1%;
-}
+#mainContent {
 
-textarea{
-  resize: none;
-  width:95%;
-  height:60%;
-  margin-left:2%;
-}
-
-.gistArea{
   height: 100%;
-  width:100%;
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+
+  input {
+
+    margin: 2% 0;
+    padding-left: 15px;
+    height: 25px;
+  }
+
+  textarea{
+
+    resize: none;
+    width: 100%;
+    height: 75%;
+    padding: 2%;
+    box-sizing: border-box;
+
+  }
 
 }
+
+
+

@@ -22,12 +22,6 @@ app.get('/', function(req, res) {
 
 });
 
-
-//view engine
-//app.set('view engine', 'dot');
-//app.set('views', './views');
-
-
 //server
 app.listen(PORT, function() {
 

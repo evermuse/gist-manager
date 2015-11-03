@@ -1,9 +1,61 @@
 @import 'globals';
 @import 'mixins/flexmixins';
 
-header{
+header {
+
   @include flexItem(1, 1, auto);
   @include flexBox(row, nowrap);
   height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .logo {
+
+    @include flexItem(1, 1, auto);
+    width: 40%;
+
+  }
+
+  nav {
+
+    @include flexItem(1, 1, auto);
+    @include flexBox(row, nowrap);
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2%;
+    width: 56%;
+
+  }
+
+  button {
+
+    @include flexItem(0, 1, 100px);
+    height: 75px;
+    padding: 5px;
+    margin: 5px;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+
+    &:active {
+
+      position:relative;
+      top:1px;
+
+    }
+
+  }
+
+  #loginButton {
+
+    margin-right: 0px;
+
+  }
+
 }
+
+
+
+
+
 //flexitem (growRate - 0 will not grow/1 will grow at a rate of 1, shrinkRate, basis)
