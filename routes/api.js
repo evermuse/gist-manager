@@ -1,6 +1,5 @@
 //external routing
 
-console.log('CHECKPOINT');
 var express = require('express');
 var router = express.Router();
 var OAuth2 = require('oauth').OAuth2;
@@ -25,8 +24,9 @@ router.use(bodyParser.urlencoded({ extended : true }));
 //route must be set exactly as it is set on provider as callback url
 //step 3 access the gists api providing the authBearerToken
 
+
 //step 1
-router.get('/auth/login', function(req, res) {
+router.get('/login', function(req, res) {
   var authURL = oauth2.getAuthorizeUrl({
     redirect_uri : 'http://localhost:3000/auth/github/callback',  //github authorization callback url
     scope : ['gist'],       //what you can do on the user's behalf
@@ -38,7 +38,7 @@ router.get('/auth/login', function(req, res) {
 
 
 //step 2
-router.get('/auth/github/callback', function (req, res) {
+router.get('/github/callback', function (req, res) {
   var code = req.query.code;
   if(code === undefined) {
     return res.status(401).json({ error : 401, message : 'Invalid auth code.'});
@@ -63,6 +63,7 @@ router.get('/auth/github/callback', function (req, res) {
       }
   );
 });
+
 
 //step 3
 

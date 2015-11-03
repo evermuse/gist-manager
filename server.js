@@ -10,15 +10,17 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended : true }));
 
 app.use(express.static('./public'));
-app.use('/api', require('./routes/api'));
+app.use('/auth', require('./routes/api'));
+
 //necessary to communicate with livereload
 app.use(livereload({ port : 35729 }));
 
-//app.get('/', function(req, res) {
-//
-//  res.json({ status : 200 });
-//
-//});
+//index route
+app.get('/', function(req, res) {
+
+  res.json({ status : 200 });
+
+});
 
 
 //view engine
