@@ -68,15 +68,40 @@ body {
   width: 100%;
   padding: 2%;
   box-sizing: border-box; }
-  /* line 35, stdin */
-  #mainContent input {
-    margin: 2% 0;
-    padding-left: 15px;
-    height: 25px; }
-  /* line 42, stdin */
+  /* line 36, stdin */
+  #mainContent #gistPanel {
+    flex: 0 1 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    align-items: center; }
+    /* line 42, stdin */
+    #mainContent #gistPanel input {
+      margin: 2% 0;
+      padding-left: 15px;
+      height: 25px;
+      border: 1px solid black; }
+    /* line 50, stdin */
+    #mainContent #gistPanel button {
+      flex: 0 1 50px;
+      box-sizing: border-box;
+      height: 25px;
+      padding: 5px;
+      margin: 5px;
+      background: transparent;
+      border: 1px solid black;
+      cursor: pointer; }
+      /* line 60, stdin */
+      #mainContent #gistPanel button:active {
+        position: relative;
+        top: 1px; }
+  /* line 71, stdin */
   #mainContent textarea {
     resize: none;
     width: 100%;
     height: 75%;
     padding: 2%;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    border: 1px solid black; }

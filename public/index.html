@@ -27,9 +27,15 @@
 
     <section id="mainContent" ng-view>
 
-        <input type="text" placeholder="Name Your Gist!" />
+        <div id="gistPanel">
 
-        <textarea name="newGist" id="newGist"></textarea>
+            <input type="text" placeholder="Name Your Gist!" />
+            <button name="editor">Save</button>
+            <button name="editor">Publish</button>
+
+        </div>
+
+        <textarea name="newGist" id="newGist" autofocus></textarea>
 
     </section>
 

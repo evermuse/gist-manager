@@ -32,11 +32,40 @@ body{
   padding: 2%;
   box-sizing: border-box;
 
-  input {
 
-    margin: 2% 0;
-    padding-left: 15px;
-    height: 25px;
+  #gistPanel {
+
+    @include flexItem(0, 1, auto);
+    @include flexBox(row, nowrap);
+    align-items: center;
+
+    input {
+
+      margin: 2% 0;
+      padding-left: 15px;
+      height: 25px;
+      border: 1px solid black;
+    }
+
+    button {
+
+      @include flexItem(0, 1, 50px);
+      height: 25px;
+      padding: 5px;
+      margin: 5px;
+      background: transparent;
+      border: 1px solid black;
+      cursor: pointer;
+
+      &:active {
+
+        position:relative;
+        top:1px;
+
+      }
+
+    }
+
   }
 
   textarea{
@@ -46,6 +75,7 @@ body{
     height: 75%;
     padding: 2%;
     box-sizing: border-box;
+    border: 1px solid black;
 
   }
 
