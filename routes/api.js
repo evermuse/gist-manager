@@ -30,7 +30,7 @@ router.get('/login', function(req, res) {
     scope : ['gist'],       //what you can do on the user's behalf
     state : 'Authorize' + Math.round(Math.random()* 9999999 )
   });
-  res.json({ url : authURL });  //gives user authorization to login
+  res.redirect(authURL);  //gives user authorization to login
 });
 
 
