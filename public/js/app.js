@@ -1,49 +1,37 @@
 //internal routing
 var gistApp = angular.module('gistApp', [
-
   'ngRoute',
   'ngStorage'
 
 ]);
 
-gistApp.config(function($routeProvider) {
+gistApp.config(function ($routeProvider) {
 
-    //configs
+  //configs
 
+  //routes
+  $routeProvider.when('/', {
 
+    templateUrl: 'views/new.html',
+    controller: 'newController'
 
+  }).when('/#/auth/github/callback/:token', {
 
+    templateUrl: 'views/login.html',
+    controller: 'loginController'
 
-    //routes
-    $routeProvider
-      .when('/', {
+  }).when('/delete', {
 
-        templateUrl : 'views/new.html',
-        controller : 'newController'
+    templateUrl: 'views/delete.html',
+    controller: 'deleteController'
 
-      })
-      .when('/#/auth/github/callback/:token', {
+  }).otherwise({
 
-        templateUrl : 'views/login.html',
-        controller : 'loginController'
+    templateUrl: 'views/404.html'
 
-      })
-      .when('/delete', {
+  });
+}).run(['$rootScope', function ($rootScope) {
 
-        templateUrl : 'views/delete.html',
-        controller : 'deleteController'
+  //initialize
 
-      })
-      .otherwise({
-
-        templateUrl : 'views/404.html'
-
-      });
-
-  })
-  .run(['$rootScope', function($rootScope) {
-
-    //initialize
-
-  }]);
-
+}]);

@@ -40,9 +40,6 @@ header {
     header button:active {
       position: relative;
       top: 1px; }
-  /* line 49, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
-  header #loginButton {
-    margin-right: 0px; }
 
 /* line 5, stdin */
 * {
@@ -76,15 +73,17 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    align-items: center; }
-    /* line 42, stdin */
+    align-items: center;
+    margin: 2% 0; }
+    /* line 43, stdin */
     #mainContent #gistPanel input {
-      margin: 2% 5px 2% 0;
       padding-left: 15px;
       height: 25px;
+      width: 200px;
       border: 1px solid black;
-      box-sizing: border-box; }
-    /* line 52, stdin */
+      box-sizing: border-box;
+      margin-right: 5px; }
+    /* line 54, stdin */
     #mainContent #gistPanel button {
       flex: 0 1 50px;
       box-sizing: border-box;
@@ -94,11 +93,11 @@ body {
       background: transparent;
       border: 1px solid black;
       cursor: pointer; }
-      /* line 63, stdin */
+      /* line 65, stdin */
       #mainContent #gistPanel button:active {
         position: relative;
         top: 1px; }
-  /* line 74, stdin */
+  /* line 76, stdin */
   #mainContent textarea {
     resize: none;
     width: 100%;
