@@ -2,7 +2,7 @@
 
     <input ng-if="!newGist.saved" ng-model="newGist.name" type="text" placeholder="Name Your Gist!" />
     <h2 ng-if="newGist.saved"> {{ newGist.name }} &nbsp; &nbsp; &nbsp;</h2>
-    <button type="button" ng-click="save(newGist.name)" ng-if="!newGist.saved">Save Name</button>
+    <button type="button" ng-click="save(newGist.name)" ng-if="!newGist.saved">Save</button>
     <button type="button" ng-click="edit(newGist.name)" ng-if="newGist.saved">Edit</button>
     <button type="button" href="#/publish">Publish</button>
 
