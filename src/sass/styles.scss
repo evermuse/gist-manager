@@ -38,14 +38,16 @@ body{
     @include flexItem(0, 1, auto);
     @include flexBox(row, nowrap);
     align-items: center;
+    margin: 2% 0;
 
     input {
 
-      margin: 2% 5px 2% 0;
       padding-left: 15px;
       height: 25px;
+      width: 200px;
       border: 1px solid black;
       box-sizing: border-box;
+      margin-right: 5px;
 
     }
 

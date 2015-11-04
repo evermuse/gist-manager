@@ -51,4 +51,3 @@ myApp.config(function($routeProvider) {
     //initialize
 
   }]);
-
