@@ -17,8 +17,8 @@ myApp.config(function($routeProvider) {
     $routeProvider
       .when('/', {
 
-        templateUrl : 'views/new.html'//,
-        //controller : 'newController'
+        templateUrl : 'views/new.html',
+        controller : 'newController'
 
       })
       .when('/auth/github/callback/:id', {
@@ -27,11 +27,10 @@ myApp.config(function($routeProvider) {
         controller : 'loginController'
 
       })
-      .when('/login', {
+      .when('/library', {
 
         templateUrl : 'views/library.html',
-        controller : 'library-Controller'
-
+        controller : 'libraryController'
 
       })
       .when('/delete', {
