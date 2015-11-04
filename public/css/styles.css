@@ -1,4 +1,4 @@
-/* line 4, /Users/EnemyBoss/DevLeague/gist-manager/src/sass/partials/_header.scss */
+/* line 4, /Users/bryan/Develop/devleague/GistManager/src/sass/partials/_header.scss */
 header {
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -66,7 +66,7 @@ body {
 #mainContent {
   height: 100%;
   width: 100%;
-  padding: 2%;
+  padding: 0 2%;
   box-sizing: border-box; }
   /* line 36, stdin */
   #mainContent #gistPanel {
@@ -79,11 +79,12 @@ body {
     align-items: center; }
     /* line 42, stdin */
     #mainContent #gistPanel input {
-      margin: 2% 0;
+      margin: 2% 5px 2% 0;
       padding-left: 15px;
       height: 25px;
-      border: 1px solid black; }
-    /* line 50, stdin */
+      border: 1px solid black;
+      box-sizing: border-box; }
+    /* line 52, stdin */
     #mainContent #gistPanel button {
       flex: 0 1 50px;
       box-sizing: border-box;
@@ -93,11 +94,11 @@ body {
       background: transparent;
       border: 1px solid black;
       cursor: pointer; }
-      /* line 60, stdin */
+      /* line 63, stdin */
       #mainContent #gistPanel button:active {
         position: relative;
         top: 1px; }
-  /* line 71, stdin */
+  /* line 74, stdin */
   #mainContent textarea {
     resize: none;
     width: 100%;
