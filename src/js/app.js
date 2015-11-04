@@ -2,7 +2,7 @@
 var gistApp = angular.module('gistApp', [
 
   'ngRoute',
-  'ngStorage'
+  'ngAnimate'
 
 ]);
 
@@ -11,21 +11,23 @@ gistApp.config(function($routeProvider) {
     //configs
 
 
-
-
-
     //routes
     $routeProvider
       .when('/', {
 
-        templateUrl : 'views/new.html',
-        controller : 'newController'
+        templateUrl : 'views/default.html'
 
       })
       .when('/#/auth/github/callback/:token', {
 
         templateUrl : 'views/login.html',
         controller : 'loginController'
+
+      })
+      .when('/new', {
+
+        templateUrl : 'views/new.html',
+        controller : 'newController'
 
       })
       .when('/delete', {
@@ -41,9 +43,9 @@ gistApp.config(function($routeProvider) {
       });
 
   })
-  .run(['$rootScope', function($rootScope) {
+  .run(['$rootScope', 'APP_VERSION', function($rootScope, APP_VERSION) {
 
     //initialize
+    $rootScope.APP_VERSION = APP_VERSION;
 
   }]);
-
