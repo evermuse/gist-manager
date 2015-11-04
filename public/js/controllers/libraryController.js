@@ -15,8 +15,8 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage',functi
     //        method: 'GET',
     //        url: 'http://api.github.com/gists',
     //        headers: {
-    //            authorization: "Bearer " + $scope.accessToken//,
-    //            //'User-Agent': 'Gist Do It'
+    //            authorization: "Bearer " + $scope.accessToken,
+    //            'User-Agent': 'POUNDBUTT'
     //        }
     //    }).then(function successCallback(response) {
     //        jsonObject = response;
@@ -31,5 +31,5 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage',functi
             jsonObject = response;
             console.log(jsonObject);
             return jsonObject;
-        })
+        });
 }]);
