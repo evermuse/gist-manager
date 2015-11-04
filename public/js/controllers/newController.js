@@ -4,26 +4,26 @@ angular.module('myApp')
     '$scope',
     function($scope) {
 
-      $scope.newGist = { 'saved' : false };
-      $scope.save = function (newGist) {
+      $scope.newGist = { 'named' : false };
+      $scope.saveName = function (newGist) {
 
-        $scope.newGist.saved = true ;
-        console.log($scope.newGist.saved);
+        $scope.newGist.named = true ;
+        console.log($scope.newGist.name);
 
       }
 
-      $scope.edit = function(newGist) {
+      $scope.editName = function(newGist) {
 
-        $scope.newGist.saved = false;
+        $scope.newGist.named = false;
+
+      }
+
+      $scope.editContent = function (newGist) {
+
+        console.log($scope.newGist.content)
 
       }
 
 
     }]);
-
-var myApp = angular.module('myApp');
-
-myApp.controller('newController', ['$scope', '$route', '$localStorage',function($scope, $route, $localStorage) {
-
-}]);
 
