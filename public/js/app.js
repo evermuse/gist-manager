@@ -1,15 +1,14 @@
 //internal routing
-var gistApp = angular.module('gistApp', [
+var myApp = angular.module('myApp', [
 
   'ngRoute',
   'ngStorage'
 
 ]);
 
-gistApp.config(function($routeProvider) {
+myApp.config(function($routeProvider) {
 
     //configs
-
 
 
 
@@ -18,14 +17,14 @@ gistApp.config(function($routeProvider) {
     $routeProvider
       .when('/', {
 
-        templateUrl : 'views/new.html',
-        controller : 'newController'
+        templateUrl : 'views/new.html'//,
+        //controller : 'newController'
 
       })
-      .when('/#/auth/github/callback/:token', {
+      .when('/auth/github/callback/:id', {
 
-        templateUrl : 'views/new.html',
-        controller : 'newController'
+        templateUrl : 'views/login.html',
+        controller : 'loginController'
 
       })
       .when('/login', {

@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngStorage']);
+var myApp = angular.module('myApp');
 
 //obtains public gists for users not logged in
 //var xhReq = new XMLHttpRequest();
@@ -7,7 +7,7 @@ var myApp = angular.module('myApp', ['ngStorage']);
 //var jsonObject = JSON.parse(xhReq.responseText);
 
 
-myApp.controller('loginController', ['$scope', 'jsonObject', '$http', 'authService',function($scope, jsonObject, $http, $localStorage) {
+myApp.controller('libraryController', ['$scope', 'jsonObject', '$http', 'authService',function($scope, jsonObject, $http, $localStorage) {
     $scope.localStorage = $localStorage;
     //needs fixing
     //$scope.init = function($http) {
