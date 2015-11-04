@@ -48,6 +48,6 @@ myApp.config(function($routeProvider) {
   })
   .run(['$rootScope', function($rootScope) {
 
-    //initialize
+    //$rootScope.newClient = {};
 
   }]);

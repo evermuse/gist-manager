@@ -16,11 +16,19 @@
         <img src="images/GistLogo.png" class="logo">
 
         <nav>
+        <!--<nav ng-controller="loginController">-->
 
             <button name="editor" onclick="location.href='/#/'">Editor</button>
             <button name="editor" onclick="location.href='/#/library'">Library</button>
 
-            <button id="loginButton" onclick="location.href='/auth/login'">Log In</button>
+            <!-- location.href changes the url field & += concats-->
+
+            <button  onclick="location.href = '/auth/login'" >Log In</button>
+            <!--<label ng-if="newClient.authenticated">You are logged in</label>-->
+
+            <!--ng-if="!newClient.authenticated" id="loginButton" ng-model="newClient"-->
+
+            <!--onclick="newLogin(newClient)"-->
 
         </nav>
 
