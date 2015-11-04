@@ -1,37 +1,46 @@
 //internal routing
-var gistApp = angular.module('gistApp', ['ngRoute', 'ngAnimate']);
+var gistApp = angular.module('gistApp', [
 
-gistApp.config(function ($routeProvider) {
+  'ngRoute',
+  'ngStorage'
 
-  //configs
+]);
 
-  //routes
-  $routeProvider.when('/', {
+gistApp.config(function($routeProvider) {
 
-    templateUrl: 'views/default.html'
+    //configs
 
-  }).when('/login', {
 
-    templateUrl: 'views/login.html',
-    controller: 'loginController'
+    //routes
+    $routeProvider
+      .when('/', {
 
-  }).when('/new', {
+        templateUrl : 'views/new.html',
+        controller : 'newController'
 
-    templateUrl: 'views/new.html',
-    controller: 'newController'
+      })
+      .when('/login', {
 
-  }).when('/delete', {
+        templateUrl : 'views/login.html',
+        controller : 'loginController'
 
-    templateUrl: 'views/delete.html',
-    controller: 'deleteController'
+      })
+      .when('/delete', {
 
-  }).otherwise({
+        templateUrl : 'views/delete.html',
+        controller : 'deleteController'
 
-    templateUrl: 'views/404.html'
+      })
+      .otherwise({
 
-  });
-}).run(['$rootScope', 'APP_VERSION', function ($rootScope, APP_VERSION) {
+        templateUrl : 'views/404.html'
 
-  //initialize
-  $rootScope.APP_VERSION = APP_VERSION;
-}]);
+      });
+
+  })
+  .run(['$rootScope', function($rootScope) {
+
+    //initialize
+
+  }]);
+
