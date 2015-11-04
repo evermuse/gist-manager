@@ -10,8 +10,9 @@ var myApp = angular.module('myApp');
 myApp.controller('libraryController', ['$scope', '$http', '$localStorage',function($scope, $http, $localStorage) {
     $scope.localStorage = $localStorage;
     //needs fixing UserAgent cannot be set due to it being a reserved type of name =/
-    //$scope.logged =
-    //    $http({
+    $scope.logged =
+    //Broken logged code
+    //   $http({
     //        method: 'GET',
     //        url: 'http://api.github.com/gists',
     //        headers: {

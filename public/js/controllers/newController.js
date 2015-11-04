@@ -1,4 +1,4 @@
-angular.module('gistApp')
+angular.module('myApp')
   .controller('newController', [
 
     '$scope',
