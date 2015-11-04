@@ -16,12 +16,6 @@ var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended : true }));
 
-//TODO: OAuth
-//step 1 getting the provider auth url
-//step 2 callback from provider with code on successful authorization
-//route must be set exactly as it is set on provider as callback url
-//step 3 access the gists api providing the authBearerToken
-
 
 //step 1
 router.get('/login', function(req, res) {
@@ -30,7 +24,7 @@ router.get('/login', function(req, res) {
     scope : ['gist'],       //what you can do on the user's behalf
     state : 'Authorize' + Math.round(Math.random()* 9999999 )
   });
-  res.json({ url : authURL });  //gives user authorization to login
+  res.redirect(authURL);  //gives user authorization to login
 });
 
 
