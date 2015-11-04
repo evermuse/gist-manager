@@ -8,7 +8,8 @@ gistApp.config(function ($routeProvider) {
   //routes
   $routeProvider.when('/', {
 
-    templateUrl: 'views/default.html'
+    templateUrl: 'views/new.html',
+    controller : 'newController'
 
   }).when('/#/auth/github/callback/:token', {
 
@@ -19,11 +20,6 @@ gistApp.config(function ($routeProvider) {
 
     templateUrl: 'views/library.html',
     controller: 'library-Controller'
-
-  }).when('/new', {
-
-    templateUrl: 'views/new.html',
-    controller: 'newController'
 
   }).when('/delete', {
 
@@ -38,5 +34,5 @@ gistApp.config(function ($routeProvider) {
 }).run(['$rootScope', function ($rootScope) {
 
   //initialize
-
+  
 }]);
