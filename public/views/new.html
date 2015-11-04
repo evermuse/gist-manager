@@ -1,16 +1,16 @@
 <div id="gistPanel">
 
 
-    <input ng-if="!newGist.saved" ng-model="newGist.name" type="text" placeholder="Name Your Gist!" />
-    <h2 ng-if="newGist.saved"> {{ newGist.name }} &nbsp; &nbsp; &nbsp;</h2>
-    <button type="button" ng-click="save(newGist.name)" ng-if="!newGist.saved">Save</button>
-    <button type="button" ng-click="edit(newGist.name)" ng-if="newGist.saved">Edit</button>
+    <input ng-if="!newGist.named" ng-model="newGist.name" type="text" placeholder="Name Your Gist!" />
+    <h2 ng-if="newGist.named"> {{ newGist.name }} &nbsp; &nbsp; &nbsp;</h2>
+    <button type="button" ng-click="saveName(newGist.name)" ng-if="!newGist.named">Save</button>
+    <button type="button" ng-click="editName(newGist.name)" ng-if="newGist.named">Edit</button>
     <button type="button" href="#/publish">Publish</button>
 
 </div>
 
 
-<textarea name="newGist" id="newGist" autofocus>
+<textarea id="newGistContent" ng-model="newGist.content" ng-change="editContent(newGist.content)" autofocus>
 
 
 </textarea>
