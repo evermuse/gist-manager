@@ -1,17 +1,7 @@
 var myApp = angular.module('myApp');
 
-myApp.service('authService', [function(){
-  localStorage.auth = url.params.token;
-  myApp.value('authToken', localStorage.auth);
-}])
+myApp.controller('loginController', ['$scope', '$route', '$localStorage',function($scope, $route, $localStorage) {
+   $localStorage.message = $route.current.params.id
+    $scope.authToken = $route.current.params.id
 
-alert('your auth token is ' + localStorage.auth);
-
-
-
-var myApp = angular.module('myApp', ['ngStorage']);
-
-
-myApp.controller('loginController', ['$scope', 'authService',function($scope, $localStorage) {
-  $scope.localStorage = $localStorage;
 }]);

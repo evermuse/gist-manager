@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body ng-app='gistApp'>
+<body ng-app='myApp'>
 
   <div id="mainViewContainer">
 
@@ -17,8 +17,8 @@
 
         <nav>
 
-            <button name="editor">Editor</button>
-            <button name="editor">Library</button>
+            <button name="editor" onclick="location.href='/#/'">Editor</button>
+            <button name="editor" onclick="location.href='/#/library'">Library</button>
 
             <button id="loginButton" onclick="location.href='/auth/login'">Log In</button>
 
@@ -38,8 +38,11 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.9/ngStorage.min.js"></script>
   <script src="/js/app.js"></script>
+
   <script src='/js/controllers/newController.js'></script>
-  <script src='/js/controllers/library-controller.js'></script>
+  <script src='/js/controllers/loginController.js'></script>
+  <script src='/js/controllers/libraryController.js'></script>
+
 
 </body>
 </html>

@@ -1,38 +1,53 @@
 //internal routing
-var gistApp = angular.module('gistApp', ['ngRoute', 'ngStorage']);
+var myApp = angular.module('myApp', [
 
-gistApp.config(function ($routeProvider) {
+  'ngRoute',
+  'ngStorage'
 
-  //configs
+]);
 
-  //routes
-  $routeProvider.when('/', {
+myApp.config(function($routeProvider) {
 
-    templateUrl: 'views/new.html',
-    controller : 'newController'
+    //configs
 
-  }).when('/#/auth/github/callback/:token', {
 
-    templateUrl: 'views/default.html',
-    controller: 'loginController'
 
-  }).when('/login', {
 
-    templateUrl: 'views/library.html',
-    controller: 'library-Controller'
+    //routes
+    $routeProvider
+      .when('/', {
 
-  }).when('/delete', {
+        templateUrl : 'views/new.html',
+        controller : 'newController'
 
-    templateUrl: 'views/delete.html',
-    controller: 'deleteController'
+      })
+      .when('/auth/github/callback/:id', {
 
-  }).otherwise({
+        templateUrl : 'views/login.html',
+        controller : 'loginController'
 
-    templateUrl: 'views/404.html'
+      })
+      .when('/library', {
 
-  });
-}).run(['$rootScope', function ($rootScope) {
+        templateUrl : 'views/library.html',
+        controller : 'libraryController'
 
-  //initialize
+      })
+      .when('/delete', {
 
-}]);
+        templateUrl : 'views/delete.html',
+        controller : 'deleteController'
+
+      })
+      .otherwise({
+
+        templateUrl : 'views/404.html'
+
+      });
+
+  })
+  .run(['$rootScope', function($rootScope) {
+
+    //initialize
+
+  }]);
