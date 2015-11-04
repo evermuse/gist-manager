@@ -18,7 +18,7 @@ gistApp.config(function($routeProvider) {
         templateUrl : 'views/default.html'
 
       })
-      .when('/login', {
+      .when('/#/auth/github/callback/:token', {
 
         templateUrl : 'views/login.html',
         controller : 'loginController'
