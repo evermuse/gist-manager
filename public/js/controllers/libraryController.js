@@ -15,32 +15,31 @@ myApp.controller('libraryController', [
     'GistService',
 
     function ($scope, $http, $localStorage, GistService) {
-
     $scope.localStorage = $localStorage;
     $scope.GistService = GistService;
 
-    //needs fixing UserAgent cannot be set due to it being a reserved type of name =/
-    //$scope.logged =
-    //    $http({
-    //        method: 'GET',
-    //        url: 'http://api.github.com/gists',
-    //        headers: {
-    //            authorization: "Bearer " + $scope.accessToken//,
-    //            //'User-Agent': 'Gist Do It'
-    //        }
-    //    }).then(function successCallback(response) {
-    //        jsonObject = response;
-    //        console.log(jsonObject);
-    //        return jsonObject;
-    //    });
+    $scope.logged =
+
+        $http({
+            method: 'GET',
+            url: '/auth/gists',
+            headers: {
+                authorization: "Bearer " + $localStorage.message
+            }
+
+        }).then(function successCallback(response) {
+
+            jsonObject = JSON.parse(response.data);
+            console.log(jsonObject);
+            return jsonObject;
+        });
 
     $scope.notLogged =
         $http({
             method: 'GET',
             url: 'http://api.github.com/gists/public'
         }).then(function successCallback(response) {
-
             GistService.gists = response.data;
+        });
 
-        })
 }]);
