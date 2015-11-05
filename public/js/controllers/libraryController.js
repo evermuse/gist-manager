@@ -7,8 +7,18 @@ var myApp = angular.module('myApp');
 //var jsonObject = JSON.parse(xhReq.responseText);
 
 
-myApp.controller('libraryController', ['$scope', '$http', '$localStorage',function($scope, $http, $localStorage) {
+myApp.controller('libraryController', [
+
+    '$scope',
+    '$http',
+    '$localStorage',
+    'GistService',
+
+    function ($scope, $http, $localStorage, GistService) {
+
     $scope.localStorage = $localStorage;
+    $scope.GistService = GistService;
+
     //needs fixing UserAgent cannot be set due to it being a reserved type of name =/
     //$scope.logged =
     //    $http({
@@ -23,13 +33,14 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage',functi
     //        console.log(jsonObject);
     //        return jsonObject;
     //    });
+
     $scope.notLogged =
         $http({
             method: 'GET',
             url: 'http://api.github.com/gists/public'
         }).then(function successCallback(response) {
-            jsonObject = response;
-            console.log(jsonObject);
-            return jsonObject;
+
+            GistService.gists = response.data;
+
         })
 }]);
