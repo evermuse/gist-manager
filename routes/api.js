@@ -58,10 +58,6 @@ router.get('/github/callback', function (req, res) {
 //step 3
 
 router.post('/gists', getAuthBearerToken, function(req,res){
-  var auth_header = req.headers.authorization;
-  var access_token = auth_header.split(' ')[1];
-  console.log(access_token);
-
   request.post({
     url : "https://api.github.com/gists",
     json : true,
@@ -83,9 +79,10 @@ router.post('/gists', getAuthBearerToken, function(req,res){
 
 });
 
-router.get('/gists/:id', getAuthBearerToken, function(req, res) {
+router.get('/gists/', getAuthBearerToken, function(req, res) {
+  console.log(req.access_token);
   request.get({
-    url : 'https://api.github.com/gists/' + req.params.id,
+    url : 'https://api.github.com/gists',
     headers : {
       authorization : "Bearer " + req.access_token,
       'User-Agent' : '#Butt INC'
@@ -101,8 +98,10 @@ function getAuthBearerToken(req, res, next) {
   if (!req.headers.hasOwnProperty('authorization')) {
     return res.status(401).json({ error : 401, message : 'Bearer auth token not found in headers' });
   }
+
   var auth_header = req.headers.authorization;
   var auth_header_value = auth_header.split(' ');
+  console.log(auth_header_value);
   if (auth_header_value.length !== 2) {
     return res.status(401).json({ error: 401, message : 'Authorization header malformation detected'});
   }

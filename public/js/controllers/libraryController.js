@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp');
+var jsonOb = angular.toJSON;
 
 //obtains public gists for users not logged in
 //var xhReq = new XMLHttpRequest();
@@ -7,7 +8,7 @@ var myApp = angular.module('myApp');
 //var jsonObject = JSON.parse(xhReq.responseText);
 
 
-myApp.controller('libraryController', ['$scope', '$http', '$localStorage',function($scope, $http, $localStorage) {
+myApp.controller('libraryController', ['$scope', '$http', '$localStorage', '$location', function($scope, $http, $localStorage, $location) {
     $scope.localStorage = $localStorage;
     //needs fixing UserAgent cannot be set due to it being a reserved type of name =/
     $scope.logged =
@@ -27,9 +28,14 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage',functi
     $scope.notLogged =
         $http({
             method: 'GET',
-            url: 'http://api.github.com/gists/public'
+            url: '/auth/gists',
+            headers: {
+                authorization: "Bearer " + $localStorage.message
+            }
+
         }).then(function successCallback(response) {
-            jsonObject = response;
+            //console.log(response);
+            jsonObject = JSON.parse(response.data);
             console.log(jsonObject);
             return jsonObject;
         });
