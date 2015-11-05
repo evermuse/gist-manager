@@ -1,10 +1,13 @@
-<div>
-    <p>So uh, the data is showing up in the console, just not the window.... Just open the console and read through gists in there :3</p>
+<div id='gistLibrary'>
+
+    <h2>Gists</h2>
+
     <ul>
-        <li ng-repeat="gist in notLogged.data">
-            <b>gist.files</b><p>gist.description</p>
+        <li class='gist' ng-repeat="gist in GistService.gists">
+            <p> {{ gist.url }}</p><p> {{ gist.description }}</p>
         </li>
     </ul>
+
 </div>
 
 
