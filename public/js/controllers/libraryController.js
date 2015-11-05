@@ -12,20 +12,6 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage', '$loc
     $scope.localStorage = $localStorage;
     //needs fixing UserAgent cannot be set due to it being a reserved type of name =/
     $scope.logged =
-    //Broken logged code
-    //   $http({
-    //        method: 'GET',
-    //        url: 'http://api.github.com/gists',
-    //        headers: {
-    //            authorization: "Bearer " + $scope.accessToken,
-    //            'User-Agent': 'POUNDBUTT'
-    //        }
-    //    }).then(function successCallback(response) {
-    //        jsonObject = response;
-    //        console.log(jsonObject);
-    //        return jsonObject;
-    //    });
-    $scope.notLogged =
         $http({
             method: 'GET',
             url: '/auth/gists',
@@ -34,9 +20,10 @@ myApp.controller('libraryController', ['$scope', '$http', '$localStorage', '$loc
             }
 
         }).then(function successCallback(response) {
-            //console.log(response);
             jsonObject = JSON.parse(response.data);
             console.log(jsonObject);
             return jsonObject;
         });
+
+    $scope.notLogged
 }]);
